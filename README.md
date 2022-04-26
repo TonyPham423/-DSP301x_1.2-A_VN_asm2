@@ -1,10 +1,8 @@
 # Project
-
 Test Grade Calculator
-
-# Description
-
 This is an assignment in the FUNiX's Course
+# Description
+Using vession python 3.9
 
 Main file: lastname_firstname_grade_the_exams.py
 
@@ -16,3 +14,4 @@ Zip file: DSP301x_asm2.zip
 -- This .zip file contains all the files in this git.--
 
 # License
+@Topy Pham 423
