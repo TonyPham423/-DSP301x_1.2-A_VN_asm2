@@ -12,7 +12,7 @@ Input file: class1.txt, class2.txt, etc.
 
 Output file: class1_grade.txt, class2_grade.txt, etc.
 
-Zip file: DSP301x_asm2_phatptfx16499@funix.edu.vn.zip
+Zip file: DSP301x_asm2.zip
 -- This .zip file contains all the files in this git.--
 
 # License
