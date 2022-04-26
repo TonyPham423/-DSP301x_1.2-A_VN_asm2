@@ -4,7 +4,7 @@ Test Grade Calculator
 This is an assignment in the FUNiX's Course
 
 # Description
-Using vession python 3.9
+Using version python 3.9
 
 Main file: lastname_firstname_grade_the_exams.py
 
