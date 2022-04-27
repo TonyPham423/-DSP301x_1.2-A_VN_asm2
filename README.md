@@ -1,19 +1,14 @@
-# Project
+Introduction
+============
 Test Grade Calculator
 
+Description
+============
 This is an assignment in the FUNiX's Course
+Using version Python 3.9 
 
-# Description
-Using version python 3.9
-
-Main file: lastname_firstname_grade_the_exams.py
-
-Input file: class1.txt, class2.txt, etc.
-
-Output file: class1_grade.txt, class2_grade.txt, etc.
-
-Zip file: DSP301x_asm2.zip
--- This .zip file contains all the files in this git.--
-
-# License
-@TonyPham423
+Copyright
+============
+This document has been placed in the public domain.
+Author: @Tonypham423 @phatptfx16499
+Source: https://github.com/TonyPham423/-DSP301x_1.2-A_VN_asm2.git
