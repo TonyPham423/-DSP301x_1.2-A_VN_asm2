@@ -1,7 +1,21 @@
+'''
+Introduction
+============
+Test Grade Calculator
 
+Description
+============
+This is an assignment in the FUNiX's Course
+Using version Python 3.9 
 
+Copyright
+============
+This document has been placed in the public domain.
+Author: @Tonypham423 @phatptfx16499
+Source: https://github.com/TonyPham423/-DSP301x_1.2-A_VN_asm2.git
+'''
 
-#TASK 1
+# Region task 1:
 
 while True:
     try:
@@ -13,7 +27,7 @@ while True:
     except:
         print('File cannot be found. Please try again!')
 
-#THIS IS TASK 2
+# Region task 2:
 
 splitdata = file.split("\n")
 print('**** ANALYZING ****')
@@ -21,10 +35,10 @@ valid_line = 0
 invalid_line = 0
 valid_lines = []
 final = []
-for line in splitdata:
-    # scan với điều kiện: Một dòng không hợp lệ chứa danh sách khác 26 giá trị được phân tách bằng dấu phẩy
+for line in splitdata: 
     splitline = line.split(',')
-    # scan với điều kiện:1 dòng không hợp lệ không chứa ký tự “N” theo sau là 8 ký tự số
+
+    #Invalid line of data
     if len(splitline[0]) != 'N' and len(splitline[0]) != 9:
         invalid_line +=1 
         print('Invalid line of data: N# is invalid\n' + line)
@@ -34,7 +48,8 @@ for line in splitdata:
     elif len(splitline) != 26:
         invalid_line +=1 
         print('Invalid line of data: does not contain exactly 26 values:\n'+ line)
-    # các trường hợp còn lại là dòng hợp lệ
+
+    #Valid line of data
     else:
         valid_lines.append(splitline)
         valid_line +=1 
@@ -45,8 +60,7 @@ print('**** REPORT ****')
 print('Total valid lines of data: ' + format(valid_line))
 print('Total invalid lines of data: ' + format(invalid_line))
 
-
-#THIS IS TASK 3
+# Region task 3:
 
 answer_key = "B,A,D,D,C,B,D,A,C,C,D,B,A,B,A,C,B,D,A,C,A,A,B,D,D"
 split_answer = answer_key.split(',')
@@ -55,11 +69,9 @@ high_grade = 0
 grades = []
 skip_answer = {}
 flase_answer = {}
-
+    # Calculate grade_score
 for splitline in valid_lines:
     if len(splitline) != 26 or not len(splitline[0]) != 'N' and len(splitline[0]) != 9: continue
-    
-    # Calculate grade_score
     grade_score = 0
     for num in range(len(split_answer)):
         if splitline[num+1] == split_answer[num]:
@@ -69,13 +81,12 @@ for splitline in valid_lines:
         else:
             grade_score -=1
             flase_answer[num+1] = flase_answer.get(num+1, 0) + 1 
+
     #Total student of high scores
     grades.append(grade_score)
     if grade_score > 80:
         high_grade +=1 
-
 print("Total student of high scores:",format(high_grade))
-
 grades2 = []
 for grade in grades:
     grades2.append(grade)
@@ -84,7 +95,6 @@ dict_grade = {}
 dict_grade[splitline[0]] = grade_score
 sum_of_grades = sum(grades)
 avg = (sum_of_grades / len(grades))
-
 print("Mean (average) score:",format(avg,".2f"))
 print("Highest score:",max(grades))
 print("Lowest score:",min(grades))
@@ -99,16 +109,16 @@ else:
     median = (grades2[int(len(grades)/2-1)] + grades2[int(len(grades)/2)])/2
     print("Median score:", median)
 
+#Question that most people skip
 num_skip = 0  
 num_flase = 0  
 skip_list = []  
 flase_list = []
-#Question that most people skip
+
 for qst, num in skip_answer.items():
     if num > num_skip:
         num_skip = num
 skip_rate = round(num_skip / total_stu, 3)
-
 for qst, num in skip_answer.items():
     if num == num_skip:
         x = ' - '.join([str(qst), str(num), str(skip_rate), ])
@@ -119,17 +129,17 @@ str_skip = ', '.join(skip_list)
 for qst, num in flase_answer.items():
     if num > num_flase:
         num_flase = num
-#flase_rate
 flase_rate = round(num_flase / total_stu, 3)
 for qst, num in flase_answer.items():
     if num == num_flase:
         y = ' - '.join([str(qst), str(num), str(flase_rate)])
         flase_list.append(y)
 str_flase = ', '.join(flase_list)
+
 print('Question that most people skip: ', format(str_skip))
 print('Question that most people answer incorrectly: ', format(str_flase))
 
-#THIS IS TASK 4
+# Region task 4:
 
 final_grades = filename + "_grades.txt"
 grades_file = open(final_grades,'w')
